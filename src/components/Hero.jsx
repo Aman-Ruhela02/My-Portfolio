@@ -1,4 +1,5 @@
 import { GoArrowUpRight } from "react-icons/go";
+import image from '../assests/ChatGPT Image Aug 23, 2026, 06_53_14 PM (1).png'
 
 function Hero() {
   return (
@@ -11,7 +12,7 @@ function Hero() {
 
         <div className="lower flex justify-between flex-col ">
             <div className="mid flex items-center justify-center relative ">
-                <img src="../../public/ChatGPT Image Aug 23, 2026, 06_53_14 PM (1).png" alt="" 
+                <img src={image} alt="" 
                 className=" " width="350px"  height="400px" />
                 
             </div>
@@ -52,7 +53,7 @@ function Hero() {
            </div>
 
            <div className="mid  mt-30 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-            <img src="../../public/ChatGPT Image Aug 23, 2026, 06_53_14 PM (1).png" alt="" className="lg:w-[500px]" width="650px" height="500"  />
+            <img src={image} alt="" className="lg:w-[500px]" width="650px" height="500"  />
            </div>
            <div className="right flex flex-col mt-15 mr-10 lg:mt-35 lg:mr-25">
              <button className="bg-white rounded-2xl mx-5 border-white py-1.5 px-3 text-[15px] lg:text-2xl lg:px-10 font-medium shadow-sm shadow-[#c1c0c0] mt-2 hover:bg-black hover:text-white " ><a href="https://www.linkedin.com/in/aman-kumar-0a8122282/" about="_blank" >LinkedIn</a></button>
