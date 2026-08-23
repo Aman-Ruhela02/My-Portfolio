@@ -36,7 +36,7 @@ function Hero() {
     </main>
 
    {/*Tab */}
-    <main className="hidden md:flex flex-col ">
+    <main className="hidden md:flex flex-col relative ">
    <div className="lower flex justify-center items-center mb-5 ">
             <h1 className="text-[180px] lg:text-[240px] flex justify-center items-center text-center leading-none ">Aman Ruhela</h1>
         </div>
@@ -52,7 +52,7 @@ function Hero() {
                 </span>
            </div>
 
-           <div className="mid  mt-30 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+           <div className="mid mt-30 absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 ">
             <img src={image} alt="" className="lg:w-[500px]" width="650px" height="500"  />
            </div>
            <div className="right flex flex-col mt-15 mr-10 lg:mt-35 lg:mr-25">
