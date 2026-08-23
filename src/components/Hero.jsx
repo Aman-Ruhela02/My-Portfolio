@@ -56,7 +56,7 @@ function Hero() {
             <img src={image} alt="" className="lg:w-[500px]" width="650px" height="500"  />
            </div>
            <div className="right flex flex-col mt-15 mr-10 lg:mt-35 lg:mr-25">
-             <button className="bg-white rounded-2xl mx-5 border-white py-1.5 px-3 text-[15px] lg:text-2xl lg:px-10 font-medium shadow-sm shadow-[#c1c0c0] mt-2 hover:bg-black hover:text-white " ><a href="https://www.linkedin.com/in/aman-kumar-0a8122282/" about="_blank" >LinkedIn</a></button>
+             <button className="bg-white rounded-2xl mx-5 border-white py-1.5 px-3 text-[15px] lg:text-2xl lg:px-10 font-medium shadow-sm shadow-[#c1c0c0] mt-2 hover:bg-black hover:text-white " ><a href="https://www.linkedin.com/in/aman-kumar-0a8122282/" target="_blank" >LinkedIn</a></button>
                 <button className="bg-white rounded-2xl mx-5 border-white py-1.5 text-[15px] lg:text-2xl lg:px-10 font-medium shadow-sm shadow-[#c1c0c0] mt-2  hover:bg-black hover:text-white " ><a href="mailto:amank004433@gmail.com" target="_blank">Gmail</a></button>
                 <button className="bg-white rounded-2xl mx-5 border-white py-1.5 text-[15px] lg:text-2xl lg:px-10 font-medium shadow-sm shadow-[#c1c0c0] mt-2  hover:bg-black hover:text-white " ><a href="https://www.instagram.com/amanruhela02/" target="_blank">Instagram</a></button>
            </div>
