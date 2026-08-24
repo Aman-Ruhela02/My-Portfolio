@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+@keyframes role{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    20%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+     80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
+.animate-role{
+    animation: role 2.5s ease-in-out;
+}

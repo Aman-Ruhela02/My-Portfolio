@@ -1,7 +1,21 @@
 import { GoArrowUpRight } from "react-icons/go";
 import image from '../assests/ChatGPT Image Aug 23, 2026, 06_53_14 PM (1).png'
+import { useEffect, useState } from "react";
+
+const roles = ["UI/UX Designer", "Web Developer", "Software Developer", "App Developer"]
 
 function Hero() {
+
+    const [roleIndex, setRoleIndex] = useState(0)
+
+    useEffect(()=>{
+        const interval = setInterval(()=>{
+            setRoleIndex((prev)=> (prev+1)% roles.length)
+        },2500)
+
+        return () => clearInterval(interval)
+    },[])
+
   return (
     <>
     {/*Mobile */}
@@ -17,7 +31,7 @@ function Hero() {
                 
             </div>
             <div className="left flex justify-between flex-col text-center pt-7 ">
-                <h2 className="font-bold text-2xl ">UI/UX Designer</h2>
+                <h2 className="font-bold text-2xl animate-role " key={roleIndex}>{roles[roleIndex]}</h2>
                 <p>Designing digital products that are clear,</p>
                 <p>usable, and conversion focused</p>
                 <span>
@@ -43,7 +57,7 @@ function Hero() {
 
      <div className="lower flex justify-between   ">
            <div className="left mt-15 ml-8 justify-center lg:mt-35 lg:ml-25 ">
-            <h2 className="font-bold text-3xl mb-2 lg:text-4xl ">UI/UX Designer</h2>
+            <h2 className="font-bold text-3xl mb-2 lg:text-4xl animate-role " key={roleIndex}>{roles[roleIndex]}</h2>
                 <p>Designing digital products</p>
                 <p> that are clear,usable, </p>
                 <p>and conversion focused</p>
