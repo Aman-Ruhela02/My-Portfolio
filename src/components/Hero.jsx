@@ -21,7 +21,7 @@ function Hero() {
     {/*Mobile */}
     <main className=" md:hidden ">
         <div className="upper flex justify-center items-center  pb-5 ">
-            <h1 className="text-[100px] flex justify-center items-center text-center leading-none ">Aman Ruhela</h1>
+            <h1 className="text-[100px]  font-['Orbitron',sans-serif] flex justify-center items-center text-center leading-none ">Aman Ruhela</h1>
         </div>
 
         <div className="lower flex justify-between flex-col ">
