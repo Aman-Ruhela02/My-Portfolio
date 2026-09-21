@@ -15,7 +15,7 @@ function Navbar() {
             <button className="rounded-2xl px-2 text-[15px] shadow-sm shadow-[#c1c0c0] font-[medium] hover:cursor-pointer " >Available for New Project</button>
         </div>
         <div className="mid hidden md:flex items-center ">
-            <ul className="flex justify-evenly gap-10">
+            <ul className="flex justify-evenly gap-10 font-medium ">
                 <li className="hover:bg-[black] hover:text-white rounded-2xl hover:px-2 hover:cursor-pointer " ><a href="#projects">Projects</a></li>
                 <li className="hover:bg-[black] hover:text-white rounded-2xl hover:px-2 hover:cursor-pointer "><a href="#skills">Skills</a></li>
                 <li className="hover:bg-[black] hover:text-white rounded-2xl hover:px-2 hover:cursor-pointer "><a href="#contact">Contact</a></li>
