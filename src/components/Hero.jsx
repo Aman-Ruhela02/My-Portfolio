@@ -1,6 +1,7 @@
 import { GoArrowUpRight } from "react-icons/go";
 import image from '../assests/ChatGPT Image Aug 23, 2026, 06_53_14 PM (1).png'
 import { useEffect, useState } from "react";
+import { easeOut, motion } from "framer-motion";
 
 const roles = ["UI/UX Designer", "Web Developer", "Software Developer", "App Developer"]
 
@@ -21,7 +22,11 @@ function Hero() {
     {/*Mobile */}
     <main className=" md:hidden ">
         <div className="upper flex justify-center items-center  pb-5 ">
-            <h1 className="orbitron text-[100px] flex justify-center items-center text-center leading-none ">Aman Ruhela</h1>
+            <motion.h1 
+            initial={{y:100,opacity:0}}
+            whileInView={{y:0,opacity:1}}
+            transition={{duration:1.2,ease:easeOut}}
+            className="orbitron text-[100px] flex justify-center items-center text-center leading-none ">Aman Ruhela</motion.h1>
         </div>
 
         <div className="lower flex justify-between flex-col ">
@@ -52,7 +57,11 @@ function Hero() {
    {/*Tab */}
     <main className="hidden md:flex flex-col relative ">
    <div className="lower flex justify-center items-center mb-5 ">
-            <h1 className="orbitron text-[180px] lg:text-[9rem] flex justify-center items-center text-center leading-none ">Aman Ruhela</h1>
+            <motion.h1 
+            initial={{y:100,opacity:0}}
+            whileInView={{y:0,opacity:1}}
+            transition={{duration:1.2,ease:easeOut}}
+            className="orbitron text-[180px] lg:text-[9rem] flex justify-center items-center text-center leading-none ">Aman Ruhela</motion.h1>
         </div>
 
      <div className="lower flex justify-between">

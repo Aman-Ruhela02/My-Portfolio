@@ -1,4 +1,4 @@
-
+import { easeOut, motion } from "framer-motion"
 
 function Contact() {
   return (
@@ -6,9 +6,21 @@ function Contact() {
       <main className="flex flex-col justify-center items-center mb-8 ">
         <div className="flex flex-col justify-between items-center text-center  mt-50 mb-10 leading-4 ">
             <button className="bg-white rounded-2xl shadow-sm shadow-black mb-5 "><p className="mx-3 my-1">Available for New Project</p></button>
-            <h1 className="text-5xl md:text-8xl my-4">HAVE A PROJECT IN MIND ?</h1>
-            <p className="">Together , we can create something clear and impactful. Let's collaborate to bring our </p>
-            <p>ideads to likfe in a way that resonates with everyone</p>
+            <motion.h1 
+            initial={{y:100,opacity:0}}
+            whileInView={{y:0,opacity:1}}
+            transition={{duration:1.2,ease:easeOut}}
+            className="text-5xl md:text-8xl my-4">HAVE A PROJECT IN MIND ?</motion.h1>
+            <motion.p 
+            initial={{y:100,opacity:0}}
+            whileInView={{y:0,opacity:1}}
+            transition={{duration:1.2,ease:easeOut}}
+            className="">Together , we can create something clear and impactful. Let's collaborate to bring our </motion.p>
+            <motion.p
+            initial={{y:100,opacity:0}}
+            whileInView={{y:0,opacity:1}}
+            transition={{duration:1.2,ease:easeOut}}
+            >ideads to likfe in a way that resonates with everyone</motion.p>
             <button className="bg-black text-white font-medium hover:bg-white hover:text-black hover:shadow-sm hover:shadow-black rounded-2xl mt-9 py-3 "><p className="mx-4">Contact Me</p></button>
         </div>
         <div className="flex justify-evenly w-full mb-15 mt-15 ">
