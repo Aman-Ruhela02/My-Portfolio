@@ -1,93 +1,222 @@
 import { GoArrowUpRight } from "react-icons/go";
-import image from '../assests/ChatGPT Image Aug 23, 2026, 06_53_14 PM (1).png'
+import image from "../assests/ChatGPT Image Aug 23, 2026, 06_53_14 PM (1).png";
 import { useEffect, useState } from "react";
 import { easeOut, motion } from "framer-motion";
 
-const roles = ["UI/UX Designer", "Web Developer", "Software Developer", "App Developer"]
+const roles = [
+  "UI/UX Designer",
+  "Web Developer",
+  "Software Developer",
+  "App Developer",
+];
 
 function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
-    const [roleIndex, setRoleIndex] = useState(0)
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
 
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            setRoleIndex((prev)=> (prev+1)% roles.length)
-        },2500)
+    setPosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
 
-        return () => clearInterval(interval)
-    },[])
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
-    {/*Mobile */}
-    <main className=" md:hidden ">
+      {/*Mobile */}
+      <main className=" md:hidden min-w-full ">
         <div className="upper flex justify-center items-center  pb-5 ">
-            <motion.h1 
-            initial={{y:100,opacity:0}}
-            whileInView={{y:0,opacity:1}}
-            transition={{duration:1.2,ease:easeOut}}
-            className="orbitron text-[100px] flex justify-center items-center text-center leading-none ">Aman Ruhela</motion.h1>
+          <motion.h1
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.2, ease: easeOut }}
+            className="orbitron text-[100px] flex justify-center items-center text-center leading-none "
+          >
+            Aman Ruhela
+          </motion.h1>
         </div>
 
         <div className="lower flex justify-between flex-col ">
-            <div className="mid flex items-center justify-center relative ">
-                <img src={image} alt="" 
-                className=" " width="350px"  height="400px" />
-                
-            </div>
-            <div className="left flex justify-between flex-col text-center pt-7 ">
-                <h2 className="font-bold text-2xl animate-role " key={roleIndex}>{roles[roleIndex]}</h2>
-                <p className="styleScript text-xl ">Designing digital products that are clear,</p>
-                <p className="styleScript text-xl ">usable, and conversion focused</p>
-                <span>
-                <button className="bg-black text-white rounded-2xl mt-5 my-3 px-5 py-1.5 hover:cursor-pointer hover:shadow-2xl hover:shadow-black  "> <span className="flex"> Let's Collaborate <GoArrowUpRight className="ml-2  mt-0.5 text-2xl" /></span>
- </button>
+          <div
+            onMouseMove={handleMouseMove}
+            className="mid relative flex items-center justify-center "
+          >
+            {/* Cream mouse glow */}
+            <div
+              className="pointer-events-none absolute z-20
+               w-[150px] h-[150px]
+               rounded-full
+               bg-[#f3df97]/40
+               blur-[40px]"
+              style={{
+                left: position.x,
+                top: position.y,
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+
+            {/* Image */}
+            <img
+              src={image}
+              alt=""
+              width="350px"
+              height="400px"
+              className="relative z-10"
+            />
+          </div>
+          <div className="left flex justify-between flex-col text-center pt-7 ">
+            <h2 className="font-bold text-2xl animate-role " key={roleIndex}>
+              {roles[roleIndex]}
+            </h2>
+            <p className="styleScript text-xl ">
+              Designing digital products that are clear,
+            </p>
+            <p className="styleScript text-xl ">
+              usable, and conversion focused
+            </p>
+            <span>
+              <button className="bg-black text-white rounded-2xl mt-5 my-3 px-5 py-1.5 hover:cursor-pointer hover:shadow-2xl hover:shadow-black  ">
+                {" "}
+                <span className="flex">
+                  {" "}
+                  Let's Collaborate{" "}
+                  <GoArrowUpRight className="ml-2  mt-0.5 text-2xl" />
                 </span>
-            </div>
+              </button>
+            </span>
+          </div>
+
+          <div className="right flex flex-col mt-5 ">
+            <button className="bg-white rounded-2xl mx-5 border-white py-1.5 text-[15px] font-medium shadow-sm shadow-[#c1c0c0] mt-2  hover:bg-black hover:text-white ">
+              <a
+                href="https://www.linkedin.com/in/aman-kumar-0a8122282/"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </button>
+            <button className="bg-white rounded-2xl mx-5 border-white py-1.5 text-[15px] font-medium shadow-sm shadow-[#c1c0c0] mt-2  hover:bg-black hover:text-white ">
+              <a href="mailto:amank004433@gmail.com" target="_blank">
+                Gmail
+              </a>
+            </button>
+            <button className="bg-white rounded-2xl mx-5 border-white py-1.5 text-[15px] font-medium shadow-sm shadow-[#c1c0c0] mt-2  hover:bg-black hover:text-white ">
+              <a href="https://github.com/Aman-Ruhela02" target="_blank">
+                GitHub
+              </a>
+            </button>
+          </div>
+        </div>
+      </main>
+
+      {/*Tab */}
+      <main className="hidden md:flex flex-col relative ">
+        <div className="lower flex justify-center items-center mb-5 ">
+          <motion.h1
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.2, ease: easeOut }}
+            className="orbitron text-[180px]  lg:text-[9rem] flex justify-center items-center text-center leading-none "
+          >
+            Aman Ruhela
+          </motion.h1>
+        </div>
+
+        <div className="lower flex justify-between">
+          <div className="left mt-15 ml-8 justify-center lg:mt-35 lg:ml-25 ">
+            <h2
+              className=" font-bold text-3xl mb-2 md:text-3xl lg:text-4xl animate-role "
+              key={roleIndex}
+            >
+              {roles[roleIndex]}
+            </h2>
+            <p className="styleScript text-xl ">Designing digital products</p>
+            <p className="styleScript text-xl "> that are clear,usable, </p>
+            <p className="styleScript text-xl ">and conversion focused</p>
+            <span>
+              <button className="bg-black absolute text-white rounded-2xl mt-5 px-5 py-1 md:mt-10 lg:text-xl hover:cursor-pointer hover:shadow-2xl hover:shadow-black">
+                <span className="flex">
+                  {" "}
+                  Let's Collaborate{" "}
+                  <GoArrowUpRight className="ml-2  mt-0.5 text-2xl" />
+                </span>
+              </button>
+            </span>
+          </div>
+
+          <div className="mid mt-30 absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+            {/* <img
+              src={image}
+              alt=""
+              className="lg:w-[500px]  "
+              width="650px"
+              height="500"
+            /> */}
+
+             <div
+            onMouseMove={handleMouseMove}
+            className="mid relative flex items-center justify-center md:w-[400px] lg:w-[500px]"
+          >
+            {/* Cream mouse glow */}
+            <div
+              className="pointer-events-none absolute z-20
+               w-[150px] h-[150px]
+               rounded-full
+               bg-[#f3df97]/40
+               blur-[40px]"
+              style={{
+                left: position.x,
+                top: position.y,
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+
+            {/* Image */}
+            <img
+              src={image}
+              alt=""
+              width="650px"
+              height="500"
+              className="relative z-10"
+            />
+         </div> 
             
-            <div className="right flex flex-col mt-5 ">
-                <button className="bg-white rounded-2xl mx-5 border-white py-1.5 text-[15px] font-medium shadow-sm shadow-[#c1c0c0] mt-2  hover:bg-black hover:text-white " ><a href="https://www.linkedin.com/in/aman-kumar-0a8122282/" target="_blank" >LinkedIn</a></button>
-                <button className="bg-white rounded-2xl mx-5 border-white py-1.5 text-[15px] font-medium shadow-sm shadow-[#c1c0c0] mt-2  hover:bg-black hover:text-white " ><a href="mailto:amank004433@gmail.com" target="_blank">Gmail</a></button>
-                <button className="bg-white rounded-2xl mx-5 border-white py-1.5 text-[15px] font-medium shadow-sm shadow-[#c1c0c0] mt-2  hover:bg-black hover:text-white " ><a href="https://github.com/Aman-Ruhela02" target="_blank">GitHub</a></button>
-            </div>
-        </div>
-        
-    </main>
 
-   {/*Tab */}
-    <main className="hidden md:flex flex-col relative ">
-   <div className="lower flex justify-center items-center mb-5 ">
-            <motion.h1 
-            initial={{y:100,opacity:0}}
-            whileInView={{y:0,opacity:1}}
-            transition={{duration:1.2,ease:easeOut}}
-            className="orbitron text-[180px] lg:text-[9rem] flex justify-center items-center text-center leading-none ">Aman Ruhela</motion.h1>
+          </div>
+          <div className="right flex flex-col mt-15 mr-10 lg:mt-35 lg:mr-25">
+            <button className="bg-white rounded-2xl mx-5 border-white py-1.5 px-3 text-[15px] lg:text-2xl lg:px-10 font-medium shadow-sm shadow-[#c1c0c0] mt-2 hover:bg-black hover:text-white ">
+              <a
+                href="https://www.linkedin.com/in/aman-kumar-0a8122282/"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </button>
+            <button className="bg-white rounded-2xl mx-5 border-white py-1.5 text-[15px] lg:text-2xl lg:px-10 font-medium shadow-sm shadow-[#c1c0c0] mt-2  hover:bg-black hover:text-white ">
+              <a href="mailto:amank004433@gmail.com" target="_blank">
+                Gmail
+              </a>
+            </button>
+            <button className="bg-white rounded-2xl mx-5 border-white py-1.5 text-[15px] lg:text-2xl lg:px-10 font-medium shadow-sm shadow-[#c1c0c0] mt-2  hover:bg-black hover:text-white ">
+              <a href="https://github.com/Aman-Ruhela02" target="_blank">
+                GitHub
+              </a>
+            </button>
+          </div>
         </div>
-
-     <div className="lower flex justify-between">
-           <div className="left mt-15 ml-8 justify-center lg:mt-35 lg:ml-25 ">
-            <h2 className=" font-bold text-3xl mb-2 lg:text-4xl animate-role " key={roleIndex}>{roles[roleIndex]}</h2>
-                <p className="styleScript text-xl ">Designing digital products</p>
-                <p className="styleScript text-xl "> that are clear,usable, </p>
-                <p className="styleScript text-xl ">and conversion focused</p>
-                <span>
-                <button className="bg-black absolute text-white rounded-2xl mt-5 px-5 py-1 lg:text-xl hover:cursor-pointer hover:shadow-2xl hover:shadow-black"><span className="flex"> Let's Collaborate <GoArrowUpRight className="ml-2  mt-0.5 text-2xl" /></span></button>
-                </span>
-           </div>
-
-           <div className="mid mt-30 absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-            <img src={image} alt="" className="lg:w-[500px]  " width="650px" height="500"  />
-           </div>
-           <div className="right flex flex-col mt-15 mr-10 lg:mt-35 lg:mr-25">
-             <button className="bg-white rounded-2xl mx-5 border-white py-1.5 px-3 text-[15px] lg:text-2xl lg:px-10 font-medium shadow-sm shadow-[#c1c0c0] mt-2 hover:bg-black hover:text-white " ><a href="https://www.linkedin.com/in/aman-kumar-0a8122282/" target="_blank" >LinkedIn</a></button>
-                <button className="bg-white rounded-2xl mx-5 border-white py-1.5 text-[15px] lg:text-2xl lg:px-10 font-medium shadow-sm shadow-[#c1c0c0] mt-2  hover:bg-black hover:text-white " ><a href="mailto:amank004433@gmail.com" target="_blank">Gmail</a></button>
-                <button className="bg-white rounded-2xl mx-5 border-white py-1.5 text-[15px] lg:text-2xl lg:px-10 font-medium shadow-sm shadow-[#c1c0c0] mt-2  hover:bg-black hover:text-white " ><a href="https://github.com/Aman-Ruhela02" target="_blank">GitHub</a></button>
-           </div>
-         
-        </div>
-    </main>
+      </main>
     </>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

@@ -11,6 +11,7 @@ function App() {
   
   return (
     <>
+    
     <Navbar/>
     <section id="home" >
      <Hero/>
