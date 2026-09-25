@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Alien+Block&family=Comic+Relief:wght@400;700&family=Cookie&family=Fredoka:wght@300..700&family=Homemade+Apple&family=Indie+Flower&family=Orbitron:wght@400..900&family=Poppins:wght@500&family=Shadows+Into+Light&family=Style+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alien+Block&family=Comic+Relief:wght@400;700&family=Cookie&family=Fredoka:wght@300..700&family=Indie+Flower&family=Orbitron:wght@400..900&family=Poppins:wght@500&family=Shadows+Into+Light&family=Style+Script&display=swap');
 @import "tailwindcss";
 
@@ -8,6 +8,10 @@
 
 .styleScript{
    font-family: "Style Script", cursive;
+}
+
+.hello {
+    font-family:"Homemade Apple", cursive;
 }
 
 @keyframes role{
